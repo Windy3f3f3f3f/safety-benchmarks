@@ -1,0 +1,10 @@
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore
++++ b/.gitignore
+@@ -90,3 +90,6 @@ logs/
+ **/.claude/settings.local.json
+ agent_artefacts/trajectory_analysis/*/trajectories/
+ agent_artefacts/trajectory_analysis/*/scout_results/
++
++# HuggingFace cache (local only)
++**/hf-cache/

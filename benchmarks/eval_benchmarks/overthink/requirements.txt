@@ -1,0 +1,4 @@
+# OverThink benchmark dependencies
+pandas
+requests
+beautifulsoup4

@@ -1,0 +1,3506 @@
+mode: include
+samples:
+  1-5:
+    sources: []
+    added: '2026-01-29'
+  '3':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '10':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '9':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '7':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '8':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '6':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '12':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '4':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '16':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '17':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '11':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '15':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '1':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '13':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '18':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '14':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '23':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '2':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '27':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '25':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '20':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '29':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '24':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '32':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '26':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '28':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '31':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '33':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '36':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '34':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '37':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '35':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '38':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '40':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '42':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '43':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '21':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '5':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '45':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '41':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '47':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '46':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '19':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '30':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '52':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '53':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '49':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '44':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '48':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '55':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '58':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '56':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '57':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '61':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '60':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '59':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '64':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '39':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '51':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '62':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '54':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '50':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '69':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '70':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '22':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '72':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '73':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '68':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '65':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '76':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '75':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '71':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '66':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '77':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '78':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '74':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '83':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '84':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '80':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '79':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '67':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '82':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '81':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '87':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '89':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '91':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '94':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '86':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '90':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '95':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '92':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '85':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '88':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '93':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '101':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '96':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '99':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '97':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '103':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '106':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '100':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '107':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '105':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '108':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '63':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '102':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '109':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '98':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '110':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '112':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '115':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '116':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '104':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '118':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '114':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '120':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '119':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '122':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '117':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '123':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '113':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '125':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '124':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '126':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '111':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '132':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '135':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '129':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '130':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '134':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '133':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '136':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '139':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '128':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '138':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '142':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '141':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '145':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '146':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '144':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '137':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '148':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '140':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '127':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '150':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '147':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '143':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '151':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '149':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '155':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '154':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '156':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '158':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '160':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '157':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '159':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '165':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '161':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '162':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '152':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '153':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '167':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '166':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '171':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '164':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '174':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '175':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '163':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '173':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '168':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '121':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '176':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '170':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '169':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '179':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '178':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '172':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '186':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '184':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '181':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '177':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '185':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '187':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '190':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '131':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '192':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '182':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '191':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '195':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '198':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '189':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '194':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '196':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '197':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '193':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '200':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '202':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '183':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '204':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '203':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '201':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '205':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '199':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '206':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '209':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '215':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '210':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '213':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '211':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '216':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '217':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '207':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '212':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '219':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '221':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '220':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '222':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '188':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '214':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '224':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '223':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '226':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '225':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '227':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '229':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '218':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '231':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '230':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '232':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '233':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '234':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '208':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '235':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '238':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '236':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '228':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '237':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '241':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '240':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '244':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '242':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '243':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '239':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '246':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '248':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '250':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '245':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '253':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '256':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '252':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '254':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '257':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '259':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '260':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '180':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '247':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '251':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '258':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '255':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '261':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '264':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '262':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '265':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '269':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '266':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '270':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '263':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '268':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '267':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '273':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '276':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '275':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '274':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '278':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '277':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '280':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '279':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '272':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '284':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '282':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '286':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '281':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '285':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '271':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '287':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '289':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '291':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '293':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '290':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '283':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '288':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '292':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '294':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '295':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '300':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '299':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '296':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '298':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '303':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '297':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '306':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '302':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '309':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '301':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '308':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '304':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '305':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '307':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '313':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '311':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '314':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '315':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '317':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '319':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '321':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '312':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '320':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '323':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '324':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '329':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '330':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '327':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '326':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '318':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '328':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '325':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '316':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '334':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '332':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '331':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '310':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '333':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '337':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '336':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '335':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '338':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '344':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '345':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '340':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '342':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '346':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '339':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '343':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '341':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '322':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '347':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '352':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '348':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '354':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '350':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '355':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '349':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '351':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '361':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '353':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '356':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '357':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '359':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '360':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '358':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '364':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '366':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '369':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '365':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '367':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '368':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '370':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '363':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '371':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '372':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '376':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '373':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '378':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '377':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '375':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '374':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '381':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '380':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '362':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '383':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '384':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '382':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '379':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '390':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '387':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '392':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '385':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '389':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '393':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '388':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '396':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '249':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '394':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '395':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '398':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '397':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '391':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '399':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '401':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '404':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '403':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '402':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '407':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '406':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '386':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '409':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '405':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '400':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '414':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '411':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '413':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '416':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '410':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '419':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '417':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '412':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '415':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '420':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '408':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '425':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '429':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '423':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '418':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '428':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '422':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '426':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '427':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '424':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '421':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '434':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '430':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '438':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '435':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '433':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '432':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '440':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '436':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '431':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '445':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '439':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '444':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '437':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '448':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '443':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '441':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '442':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '447':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '446':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '450':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '451':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '452':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '449':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '453':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '455':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '461':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '454':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '460':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '462':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '458':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '456':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '468':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '466':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '459':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '463':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '464':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '470':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '469':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '467':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '465':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '471':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '457':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '477':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '472':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '475':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '476':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '478':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '480':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '483':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '481':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '484':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '482':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '486':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '473':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '487':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '493':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '488':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '489':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '490':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '492':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '494':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '474':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '497':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '495':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '479':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '491':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '498':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '499':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '496':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '500':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+  '485':
+    sources:
+    - model: baidu-deepseek-v3.2
+      reason: No filter applied
+    - model: doubao-seed-1-8-251228
+      reason: No filter applied
+    added: '2026-01-29'
+updated: '2026-01-29T17:48:33.472892'

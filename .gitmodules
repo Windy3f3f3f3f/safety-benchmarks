@@ -1,0 +1,6 @@
+[submodule "upstream/inspect_ai"]
+	path = upstream/inspect_ai
+	url = https://github.com/xln3/inspect_ai.git
+[submodule "upstream/inspect_evals"]
+	path = upstream/inspect_evals
+	url = https://github.com/xln3/inspect_evals.git

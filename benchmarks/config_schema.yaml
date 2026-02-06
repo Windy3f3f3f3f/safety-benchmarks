@@ -1,0 +1,126 @@
+# 一键测评配置表单 Schema
+# 用户在运行评测前需要确认/填写的配置项
+
+# ============================================================
+# 1. 被测模型配置 (必填)
+# ============================================================
+model:
+  name: ""                    # 模型名称，如: doubao-seed-1-8-251228
+  api_key: ""                 # API Key (可使用环境变量 OPENAI_API_KEY)
+  base_url: ""                # API Base URL (可使用环境变量 OPENAI_BASE_URL)
+
+# ============================================================
+# 2. Judge Model 配置 (部分 benchmark 需要)
+# ============================================================
+# 适用于: cyberseceval_2 (cyse2_interpreter_abuse, cyse2_prompt_injection)
+#
+# 说明: Judge Model 用于评估模型输出质量，不同 Judge 精度和成本不同
+#
+judge_model:
+  # 选择预设方案 (三选一):
+  #   - economy:  gpt-4o-mini  (成本低，适合大规模测试)
+  #   - balanced: zai-glm-4.7  (性价比高，国内访问快) [推荐]
+  #   - premium:  gpt-4o       (精度最高，成本较高)
+  preset: "balanced"
+
+  # 或者自定义配置:
+  # custom:
+  #   name: "your-model-name"
+  #   api_key: ""              # 留空则使用主模型的 API Key
+  #   base_url: ""             # 留空则使用主模型的 Base URL
+
+# ============================================================
+# 3. HuggingFace 配置 (部分 benchmark 需要)
+# ============================================================
+# 适用于:
+#   - xstest: 需要认证访问 gated dataset
+#   - strong_reject: 需要网络访问下载数据集
+#
+huggingface:
+  # HuggingFace Token (xstest 必需)
+  # 获取地址: https://huggingface.co/settings/tokens
+  token: ""                   # 或使用环境变量 HF_TOKEN
+
+  # 网络代理 (可选，如果直连 HuggingFace 有问题)
+  # mirror: "https://hf-mirror.com"  # 国内镜像
+  # proxy: "http://127.0.0.1:7890"   # HTTP 代理
+
+# ============================================================
+# 4. 容器环境配置 (部分 benchmark 需要)
+# ============================================================
+# 适用于:
+#   - cyse2_vulnerability_exploit: 需要 Docker
+#   - cve_bench: 需要 Docker 或 Kubernetes
+#
+container:
+  # Docker 配置
+  docker:
+    enabled: true             # 是否启用 Docker
+    # 以下为高级选项，通常不需要修改:
+    # socket: "/var/run/docker.sock"
+    # timeout: 300            # 容器超时时间(秒)
+
+  # Kubernetes 配置 (仅 cve_bench 可选)
+  # 注意: Docker 支持全部 40 个 CVE，K8s 只支持 27 个
+  kubernetes:
+    enabled: false            # 是否使用 K8s (默认使用 Docker)
+    # kubeconfig: "~/.kube/config"
+    # namespace: "cve-bench"
+
+# ============================================================
+# 5. 用户许可确认 (必须同意)
+# ============================================================
+permissions:
+  # cyse2_vulnerability_exploit 许可
+  # 说明: 将在隔离的 Docker 容器中编译和执行测试代码
+  #       代码在沙箱中运行，不会影响宿主机
+  allow_code_execution: false  # 请设为 true 表示同意
+
+  # cve_bench 许可
+  # 说明: 将在 Docker 容器中运行包含真实 CVE 漏洞的 Web 应用
+  #       所有漏洞环境均在隔离容器中运行，用于测试 AI 的漏洞利用能力
+  allow_vulnerable_apps: false  # 请设为 true 表示同意
+
+# ============================================================
+# 6. Benchmark 选择
+# ============================================================
+benchmarks:
+  # 安全类 (无特殊依赖)
+  - strong_reject           # 需要: HF 网络
+  - xstest                  # 需要: HF Token
+
+  # 偏见与公平性
+  - bbq                     # 无特殊依赖
+
+  # 真实性
+  - truthfulqa              # 无特殊依赖
+
+  # Agent 安全
+  - agentharm               # 无特殊依赖
+  - agentharm_benign        # 无特殊依赖
+  - agentdojo               # 无特殊依赖
+
+  # 网络安全 (需要额外依赖)
+  - cyberseceval_2:         # 需要: Judge Model
+      tasks:
+        - cyse2_interpreter_abuse
+        - cyse2_prompt_injection
+        - cyse2_vulnerability_exploit  # 额外需要: Docker
+
+  - cve_bench               # 需要: Docker 或 K8s, Python >= 3.12
+
+# ============================================================
+# 依赖检查清单 (自动生成，供参考)
+# ============================================================
+# _dependency_matrix:
+#   judge_model:
+#     - cyberseceval_2 (所有 tasks)
+#   hf_network:
+#     - strong_reject
+#   hf_auth:
+#     - xstest
+#   docker:
+#     - cyse2_vulnerability_exploit
+#     - cve_bench (推荐，支持 40 CVE)
+#   kubernetes:
+#     - cve_bench (可选，仅支持 27 CVE)

@@ -1,0 +1,2 @@
+# Raccoon benchmark dependencies
+rouge-score
