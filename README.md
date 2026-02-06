@@ -76,26 +76,12 @@ OPENAI_BASE_URL=https://api.openai.com/v1
 ./run-eval.py cyberseceval_2:cyse2_interpreter_abuse --model openai/gpt-4o-mini --limit 100
 ```
 
-### 运行所有 Benchmark
-
-```bash
-# 一键运行所有已注册的 benchmark
-./run-eval.py --run-all --model openai/gpt-4o-mini
-
-# 每个 benchmark 各跑 100 条
-./run-eval.py --run-all --model openai/gpt-4o-mini --limit 100
-
-# 干跑模式：只打印命令，不实际执行
-./run-eval.py --run-all --model openai/gpt-4o-mini --dry-run
-```
-
 ### 常用选项
 
 | 选项 | 说明 |
 |------|------|
 | `--model`, `-m` | 模型名称（如 `openai/gpt-4o-mini`、`doubao-seed-1-8-251228`） |
 | `--limit N` | 限制每个 task 的样本数量 |
-| `--run-all` | 运行所有 benchmark |
 | `--dry-run` | 仅打印命令，不实际执行 |
 | `--preflight` | 仅运行预检查 |
 | `--skip-preflight` | 跳过预检查（不推荐） |
