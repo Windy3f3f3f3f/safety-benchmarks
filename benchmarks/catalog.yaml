@@ -141,3 +141,12 @@ benchmarks:
   #         level: seed
   #     - name: privacylens_action
   #       path: eval_benchmarks/privacylens_action
+  wmdp:
+    source: local
+    module: eval_benchmarks/wmdp
+    python: "3.10"
+    tasks:
+      - name: wmdp_cyber
+        path: eval_benchmarks/wmdp_cyber
+      - name: wmdp_bio
+        path: eval_benchmarks/wmdp_bio
