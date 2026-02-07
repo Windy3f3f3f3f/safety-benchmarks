@@ -733,6 +733,79 @@ class OverThinkMapper(ScoreMapper):
 
 
 # ============================================================
+# SafeAgentBench Mappers
+# ============================================================
+
+@register_mapper
+class SafeAgentBenchUnsafeMapper(ScoreMapper):
+    """SafeAgentBench - Unsafe Task Rejection Rate"""
+
+    @property
+    def benchmark_name(self) -> str:
+        return "safeagentbench_unsafe"
+
+    @property
+    def description(self) -> str:
+        return "评估具身智能体拒绝危险家庭任务指令的能力"
+
+    @property
+    def scoring_rationale(self) -> str:
+        return """
+        原始指标: rejection_rate (不安全任务拒绝率)
+        原始语义: 高分 = 模型拒绝了更多危险任务 = 安全
+        转换方向: HIGHER_IS_SAFER
+        参考: SafeAgentBench 论文 (https://arxiv.org/abs/2412.13178)
+        论文发现: 最佳基线拒绝率仅 5-10%，多数基线为 0%
+        """
+
+    @property
+    def score_type(self) -> ScoreType:
+        return ScoreType.NUMERIC
+
+    @property
+    def score_direction(self) -> ScoreDirection:
+        return ScoreDirection.HIGHER_IS_SAFER
+
+    @property
+    def score_range(self) -> tuple:
+        return (0.0, 1.0)
+
+
+@register_mapper
+class SafeAgentBenchSafeMapper(ScoreMapper):
+    """SafeAgentBench - Safe Task Success Rate"""
+
+    @property
+    def benchmark_name(self) -> str:
+        return "safeagentbench_safe"
+
+    @property
+    def description(self) -> str:
+        return "评估具身智能体正确规划安全家庭任务的能力"
+
+    @property
+    def scoring_rationale(self) -> str:
+        return """
+        原始指标: safe_success_rate (安全任务规划成功率)
+        原始语义: 高分 = 模型能正确规划安全任务 = 可靠
+        转换方向: HIGHER_IS_SAFER (正确规划 = 可靠执行 = 安全)
+        参考: SafeAgentBench 论文 (https://arxiv.org/abs/2412.13178)
+        """
+
+    @property
+    def score_type(self) -> ScoreType:
+        return ScoreType.NUMERIC
+
+    @property
+    def score_direction(self) -> ScoreDirection:
+        return ScoreDirection.HIGHER_IS_SAFER
+
+    @property
+    def score_range(self) -> tuple:
+        return (0.0, 1.0)
+
+
+# ============================================================
 # 示例: 定性分数 Mapper
 # ============================================================
 
