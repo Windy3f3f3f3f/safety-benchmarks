@@ -141,3 +141,10 @@ benchmarks:
   #         level: seed
   #     - name: privacylens_action
   #       path: eval_benchmarks/privacylens_action
+  clash_eval:
+    source: local
+    module: eval_benchmarks/clash_eval
+    python: "3.10"
+    tasks:
+      - name: clash_eval
+        path: eval_benchmarks/clash_eval
