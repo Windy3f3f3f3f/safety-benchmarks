@@ -116,6 +116,16 @@ benchmarks:
       - name: overthink
         path: eval_benchmarks/overthink
 
+  culturalbench:
+    source: local
+    module: eval_benchmarks/culturalbench
+    python: "3.10"
+    tasks:
+      - name: culturalbench_easy
+        path: eval_benchmarks/culturalbench_easy
+      - name: culturalbench_hard
+        path: eval_benchmarks/culturalbench_hard
+
   personalized_safety:
     source: local
     module: eval_benchmarks/personalized_safety
