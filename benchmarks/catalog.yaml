@@ -23,21 +23,21 @@ benchmarks:
   #     - name: xstest
   #       path: inspect_evals/xstest
 
-  cyberseceval_2:
-    source: upstream
-    module: inspect_evals/cyberseceval_2
-    python: "3.10"
-    judge_model: zai-glm-4.7
-    judge_param: judge_llm
-    tasks:
-      - name: cyse2_interpreter_abuse
-        path: upstream/inspect_evals/src/inspect_evals/cyberseceval_2/interpreter_abuse/task.py@cyse2_interpreter_abuse
-        task_args:
-          epochs: 1
-      - name: cyse2_prompt_injection
-        path: upstream/inspect_evals/src/inspect_evals/cyberseceval_2/prompt_injection/task.py@cyse2_prompt_injection
-        task_args:
-          epochs: 1
+  # #cyberseceval_2:
+  # # source: upstream
+  # #  module: inspect_evals/cyberseceval_2
+  #   python: "3.10"
+  #   judge_model: zai-glm-4.7
+  #   judge_param: judge_llm
+  #   tasks:
+  #     - name: cyse2_interpreter_abuse
+  #       path: upstream/inspect_evals/src/inspect_evals/cyberseceval_2/interpreter_abuse/task.py@cyse2_interpreter_abuse
+  #       task_args:
+  #         epochs: 1
+  #     - name: cyse2_prompt_injection
+  #       path: upstream/inspect_evals/src/inspect_evals/cyberseceval_2/prompt_injection/task.py@cyse2_prompt_injection
+  #       task_args:
+  #         epochs: 1
       # - name: cyse2_vulnerability_exploit
       #   path: upstream/inspect_evals/src/inspect_evals/cyberseceval_2/vulnerability_exploit/task.py@cyse2_vulnerability_exploit
       #   task_args:
@@ -128,6 +128,44 @@ benchmarks:
       - name: personalized_safety_context_rich
         path: eval_benchmarks/personalized_safety_context_rich
 
+ 
+  # /gemini/code/wxz/safety-benchmarks/benchmarks/catalog.yaml
+
+  # mssbench:
+  #   source: local
+  #   module: eval_benchmarks/mssbench
+  #   python: "3.10"
+  #   tasks:
+  #     - name: mssbench_chat
+  #       path: eval_benchmarks/mssbench_chat
+  #     - name: mssbench_embodied
+  #       path: eval_benchmarks/mssbench_embodied
+
+  mssbench:
+    source: local
+    module: eval_benchmarks/mssbench
+    python: "3.10"
+  # 使用一个经济型的 judge model
+    judge_model: openai/gpt-4o-mini
+  # 这个参数名必须和 task 函数中的 judge model 参数名一致
+    judge_param: judge_model
+    tasks:
+      - name: mssbench_chat
+        path: eval_benchmarks/mssbench_chat
+      # 运行 if setting (默认)
+        task_args:
+          setting: if
+      - name: mssbench_embodied
+        path: eval_benchmarks/mssbench_embodied
+        task_args:
+          setting: if
+
+# --- 保留文件中其他已有的 benchmarks ---
+# raccoon:
+#   source: local
+#   module: eval_benchmarks/raccoon
+#   ...
+
   # privacylens:
   #   source: local
   #   module: eval_benchmarks/privacylens
@@ -141,3 +179,6 @@ benchmarks:
   #         level: seed
   #     - name: privacylens_action
   #       path: eval_benchmarks/privacylens_action
+  
+
+
