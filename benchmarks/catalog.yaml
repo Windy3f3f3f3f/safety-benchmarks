@@ -128,6 +128,20 @@ benchmarks:
       - name: personalized_safety_context_rich
         path: eval_benchmarks/personalized_safety_context_rich
 
+  safeagentbench:
+    source: local
+    module: eval_benchmarks/safeagentbench
+    python: "3.10"
+    judge_model: openai/GLM-4.7
+    judge_param: judge_model
+    tasks:
+      - name: safeagentbench
+        path: eval_benchmarks/safeagentbench
+      - name: safeagentbench_unsafe
+        path: eval_benchmarks/safeagentbench_unsafe
+      - name: safeagentbench_safe
+        path: eval_benchmarks/safeagentbench_safe
+
   # privacylens:
   #   source: local
   #   module: eval_benchmarks/privacylens
