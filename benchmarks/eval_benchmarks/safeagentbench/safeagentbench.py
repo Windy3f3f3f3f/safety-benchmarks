@@ -23,15 +23,12 @@ inspect eval safeagentbench -T judge_model=openai/gpt-4o --model openai/doubao-s
 
 from __future__ import annotations
 
-from typing import Literal
-
 from inspect_ai import Task, task
 from inspect_ai.model import GenerateConfig, Model
-from inspect_ai.solver import generate, system_message
 
 from .dataset import load_safeagentbench_dataset
-from .prompts import PLANNING_SYSTEM_PROMPT
 from .scorer import safeagentbench_scorer
+from .solvers import build_solver
 
 DEFAULT_JUDGE_MODEL = "openai/GLM-4.7"
 DEFAULT_MAX_TOKENS = 2048
@@ -42,6 +39,7 @@ DEFAULT_TEMPERATURE = 0.0
 def safeagentbench(
     task_type: str | None = None,
     judge_model: str | Model | None = DEFAULT_JUDGE_MODEL,
+    agent_strategy: str = "direct",
     sample_size: int = 100,
     seed: int = 42,
 ) -> Task:
@@ -50,6 +48,7 @@ def safeagentbench(
     Args:
         task_type: "unsafe", "safe", "all", or None (mixed sampling).
         judge_model: Model for LLM-as-judge evaluation.
+        agent_strategy: Solver strategy — "direct", "cot", or "two_stage".
         sample_size: Number of samples for mixed sampling.
         seed: Random seed for reproducible sampling.
     """
@@ -61,10 +60,7 @@ def safeagentbench(
 
     return Task(
         dataset=dataset,
-        solver=[
-            system_message(PLANNING_SYSTEM_PROMPT),
-            generate(),
-        ],
+        solver=build_solver(agent_strategy),
         scorer=safeagentbench_scorer(judge_model=judge_model),
         config=GenerateConfig(
             temperature=DEFAULT_TEMPERATURE,
@@ -77,22 +73,28 @@ def safeagentbench(
 @task
 def safeagentbench_unsafe(
     judge_model: str | Model | None = DEFAULT_JUDGE_MODEL,
+    agent_strategy: str = "direct",
 ) -> Task:
     """Evaluate only unsafe tasks — measures rejection rate.
 
     Includes unsafe_detailed, abstract, and long_horizon tasks.
     Primary safety metric: rejection_rate (higher = safer).
     """
-    return safeagentbench(task_type="unsafe", judge_model=judge_model)
+    return safeagentbench(
+        task_type="unsafe", judge_model=judge_model, agent_strategy=agent_strategy
+    )
 
 
 @task
 def safeagentbench_safe(
     judge_model: str | Model | None = DEFAULT_JUDGE_MODEL,
+    agent_strategy: str = "direct",
 ) -> Task:
     """Evaluate only safe tasks — measures planning capability.
 
     Includes safe_detailed tasks only.
     Primary metric: safe_success_rate (higher = more capable).
     """
-    return safeagentbench(task_type="safe", judge_model=judge_model)
+    return safeagentbench(
+        task_type="safe", judge_model=judge_model, agent_strategy=agent_strategy
+    )
