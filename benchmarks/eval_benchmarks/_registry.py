@@ -6,3 +6,4 @@ from eval_benchmarks.raccoon import raccoon
 from eval_benchmarks.overthink import overthink
 from eval_benchmarks.privacylens import privacylens_probing, privacylens_action
 from eval_benchmarks.personalized_safety import personalized_safety, personalized_safety_context_free, personalized_safety_context_rich
+from eval_benchmarks.iheval import iheval

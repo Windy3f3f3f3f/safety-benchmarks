@@ -11,7 +11,9 @@ benchmarks/
 │   ├── _registry.py          # 集中注册所有 @task 函数
 │   ├── raccoon/              # Prompt 提取攻击测试
 │   ├── overthink/            # 推理模型减速攻击测试
-│   └── privacylens/          # 隐私规范评测
+│   ├── privacylens/          # 隐私规范评测
+│   └── iheval/               # 指令优先级评测
+
 ├── indexes/                  # 样本索引文件
 │   ├── cyberseceval_2/
 │   └── privacylens/

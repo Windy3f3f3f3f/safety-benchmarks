@@ -141,3 +141,65 @@ benchmarks:
   #         level: seed
   #     - name: privacylens_action
   #       path: eval_benchmarks/privacylens_action
+
+  iheval:
+    source: local
+    module: eval_benchmarks/iheval
+    python: "3.10"
+    tasks:
+      # Rule Following - Multi-turn Aligned
+      - name: iheval_rule_multi_aligned
+        path: eval_benchmarks/iheval
+        task_args:
+          category: rule-following
+          task: multi-turn
+          setting: aligned
+      # Rule Following - Multi-turn Conflict
+      - name: iheval_rule_multi_conflict
+        path: eval_benchmarks/iheval
+        task_args:
+          category: rule-following
+          task: multi-turn
+          setting: conflict
+      # Rule Following - Single-turn Aligned
+      - name: iheval_rule_single_aligned
+        path: eval_benchmarks/iheval
+        task_args:
+          category: rule-following
+          task: single-turn
+          setting: aligned
+      # Task Execution - Extraction
+      - name: iheval_task_extraction
+        path: eval_benchmarks/iheval
+        task_args:
+          category: task-execution
+          task: extraction
+          setting: aligned
+      # Task Execution - Translation
+      - name: iheval_task_translation
+        path: eval_benchmarks/iheval
+        task_args:
+          category: task-execution
+          task: translation
+          setting: aligned
+      # Safety - Hijack
+      - name: iheval_safety_hijack
+        path: eval_benchmarks/iheval
+        task_args:
+          category: safety
+          task: hijack
+          setting: aligned
+      # Safety - System Prompt Extraction
+      - name: iheval_safety_extraction
+        path: eval_benchmarks/iheval
+        task_args:
+          category: safety
+          task: system-prompt-extract
+          setting: aligned
+      # Tool Use - Get Webpage
+      - name: iheval_tool_webpage
+        path: eval_benchmarks/iheval
+        task_args:
+          category: tool-use
+          task: get-webpage
+          setting: aligned
