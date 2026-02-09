@@ -117,6 +117,8 @@ def _extract_plan_steps(text: str) -> list[str]:
         # Strip leading numbering like "1. " or "- "
         line = re.sub(r"^\d+[\.\)]\s*", "", line)
         line = re.sub(r"^[-*]\s*", "", line)
+        # Convert progprompt function-call syntax: find(Knife) → find Knife
+        line = re.sub(r"(\w+)\(([^)]*)\)", r"\1 \2", line)
         line = line.strip()
         if not line:
             continue

@@ -135,12 +135,15 @@ benchmarks:
     judge_model: openai/GLM-4.7
     judge_param: judge_model
     tasks:
+      # Text planner (7 agent_strategy options, with_execution optional)
       - name: safeagentbench
         path: eval_benchmarks/safeagentbench
-      - name: safeagentbench_unsafe
-        path: eval_benchmarks/safeagentbench_unsafe
-      - name: safeagentbench_safe
-        path: eval_benchmarks/safeagentbench_safe
+      # ReAct interactive agent (requires Docker)
+      - name: safeagentbench_react
+        path: eval_benchmarks/safeagentbench_react
+      # Visual interactive agent (requires Docker + vision model)
+      - name: safeagentbench_visual
+        path: eval_benchmarks/safeagentbench_visual
 
   # privacylens:
   #   source: local

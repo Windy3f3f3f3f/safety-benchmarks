@@ -8,111 +8,62 @@ This benchmark evaluates whether LLM agents can:
 2. Successfully plan safe household tasks (safe tasks)
 3. Comply with safety constraints in multi-step tasks (long-horizon tasks)
 
-## Evaluation Modes (eval_mode parameter)
+## Sub-tasks
 
-Four modes, from lightweight to full-stack:
+Three sub-tasks, each corresponding to a different solver type:
 
-### semantic (default) — pure text, no simulator
-  Model reads task instruction → generates action plan text →
+### safeagentbench — text planner (7 agent strategies)
+  Model reads task instruction -> generates action plan text ->
   LLM judge evaluates plan quality against reference steps.
-  No AI2-THOR involved. Fastest mode.
+  agent_strategy options:
+    direct      — LoTa-Bench      (https://arxiv.org/abs/2402.08178)
+    cot         — chain-of-thought reasoning prefix
+    two_stage   — high-level plan then low-level conversion
+    progprompt  — ProgPrompt       (https://arxiv.org/abs/2209.11302)
+    fewshot     — LLM-Planner      (https://arxiv.org/abs/2212.04088)
+    cooperative — CoELA            (https://arxiv.org/abs/2307.02485)
+    mldt        — MLDT             (https://arxiv.org/abs/2403.18760)
+  With with_execution=True, scorer also executes the plan in AI2-THOR.
 
-### exec — model generates text plan, scorer executes in simulator
-  Model reads task instruction → generates action plan text (same as semantic) →
-  Scorer extracts action steps from text → resets AI2-THOR 3D scene →
-  executes each step in simulator → reads final object states →
-  compares with ground-truth states.
-  Model itself never interacts with AI2-THOR; execution is post-hoc.
+### safeagentbench_react — ReAct interactive agent
+  ReAct baseline (https://arxiv.org/abs/2210.03629).
+  Model interacts with AI2-THOR step-by-step via tool calls (text feedback).
+  Always includes execution scoring (requires Docker).
 
-### react — model interacts with simulator via tool calls, text feedback
-  AI2-THOR scene is reset → model receives task instruction →
-  model calls thor_execute("find Knife") tool → tool sends HTTP request
-  to AI2-THOR Docker container → container executes action in Unity simulator →
-  returns success/failure text to model → model decides next action →
-  ... loop until model calls thor_done().
-  Model drives the simulator step-by-step through tool-use, receiving
-  text descriptions of action results and object states.
+### safeagentbench_visual — visual interactive agent (3 strategies)
+  Model interacts with AI2-THOR via tool calls with screenshot feedback.
+  agent_strategy options:
+    basic   — standard visual agent
+    pca     — PCA-EVAL  (https://arxiv.org/abs/2402.15527)
+    map_vlm — MAP       (https://arxiv.org/abs/2408.05478)
+  Always includes execution scoring (requires Docker + vision model).
 
-### visual — same as react, but with screenshots
-  Same interactive loop as react, but each tool call also returns a
-  PNG screenshot from AI2-THOR's in-simulator camera. The model can
-  see the 3D environment and use visual information to plan actions.
-  Requires a vision-capable model.
-
-## Prerequisites for exec/react/visual modes
+## Prerequisites for execution modes
 
 AI2-THOR runs in a Docker container with GPU (NVIDIA + Vulkan + Xvfb):
   cd benchmarks/eval_benchmarks/safeagentbench/docker
   docker compose up -d --build
   curl http://localhost:9100/health  # should return {"status": "ok"}
 
-## Task Parameters (all via -T key=value)
-
-  eval_mode     Evaluation mode. Default: "semantic".
-                "semantic" | "exec" | "react" | "visual" (see above).
-
-  task_type     Which tasks to include. Default: None (mixed sampling).
-                None  — mixed sampling: 50 unsafe + 30 safe + 10 abstract + 10 long_horizon.
-                "unsafe" — all unsafe tasks (unsafe_detailed + abstract + long_horizon).
-                "safe"   — all safe_detailed tasks only.
-                "all"    — all 750 samples without sampling.
-
-  agent_strategy  Planning strategy for semantic/exec modes. Default: "direct".
-                  "direct"    — system prompt + single generation.
-                  "cot"       — chain-of-thought prefix before generation.
-                  "two_stage" — generate high-level plan, then convert to low-level actions.
-                  Ignored for react/visual (they use basic_agent with tool-use loop).
-
-  judge_model   Model for LLM-as-judge semantic evaluation. Default: "openai/GLM-4.7".
-                Requires ZHIPU_API_KEY and ZHIPU_BASE_URL env vars if using Zhipu API.
-
-  thor_url      URL of AI2-THOR action server. Default: "http://localhost:9100".
-                Only used for exec/react/visual modes.
-
-  sample_size   Number of samples for mixed sampling. Default: 100.
-                Only effective when task_type is None.
-
-  seed          Random seed for reproducible sampling. Default: 42.
-
-## Task Variants
-
-  safeagentbench         Main task, supports all parameters above.
-  safeagentbench_unsafe  Shortcut: task_type="unsafe" (all unsafe tasks).
-  safeagentbench_safe    Shortcut: task_type="safe" (all safe tasks).
-
-## Output Metrics
-
-  Semantic scorer (all modes):
-    rejection_rate      — proportion of unsafe tasks where model refused (higher = safer).
-    safe_success_rate   — proportion of safe tasks with successful planning.
-    risk_rate           — 1 - rejection_rate (proportion of unsafe tasks where model complied).
-
-  Execution scorer (exec/react/visual only):
-    execution_success_rate      — proportion of samples where all GT objects fully match.
-    execution_step_success_rate — average per-object property match ratio.
-
 ## Usage Examples
 
-  # semantic — pure text evaluation, no simulator needed
+  # text planner — semantic only (no simulator)
   inspect eval eval_benchmarks/safeagentbench --model openai/doubao-seed-1-8
 
-  # semantic with chain-of-thought strategy
+  # text planner with chain-of-thought
   inspect eval eval_benchmarks/safeagentbench -T agent_strategy=cot --model openai/doubao-seed-1-8
 
-  # exec — model generates plan text, scorer executes in AI2-THOR
-  inspect eval eval_benchmarks/safeagentbench -T eval_mode=exec --model openai/doubao-seed-1-8
+  # text planner with execution scoring (needs Docker)
+  inspect eval eval_benchmarks/safeagentbench -T with_execution=true --model openai/doubao-seed-1-8
 
-  # react — model drives AI2-THOR step-by-step via tool calls, text feedback
-  inspect eval eval_benchmarks/safeagentbench -T eval_mode=react --model openai/doubao-seed-1-8
+  # ReAct agent (needs Docker)
+  inspect eval eval_benchmarks/safeagentbench_react --model openai/doubao-seed-1-8
 
-  # visual — same as react but with screenshots (needs vision model)
-  inspect eval eval_benchmarks/safeagentbench -T eval_mode=visual --model openai/doubao-seed-1-8
+  # visual agent (needs Docker + vision model)
+  inspect eval eval_benchmarks/safeagentbench_visual --model openai/doubao-seed-1-8
 
-  # only unsafe tasks, limit to 10 samples
-  inspect eval eval_benchmarks/safeagentbench_unsafe --model openai/doubao-seed-1-8 --limit 10
-
-  # only safe tasks with exec evaluation
-  inspect eval eval_benchmarks/safeagentbench_safe -T eval_mode=exec --model openai/doubao-seed-1-8
+  # visual agent with PCA strategy
+  inspect eval eval_benchmarks/safeagentbench_visual -T agent_strategy=pca --model openai/doubao-seed-1-8
 """
 
 from __future__ import annotations
@@ -130,75 +81,19 @@ DEFAULT_JUDGE_MODEL = "openai/GLM-4.7"
 DEFAULT_MAX_TOKENS = 2048
 DEFAULT_TEMPERATURE = 0.0
 
-VALID_EVAL_MODES = ("semantic", "exec", "react", "visual")
+VALID_VISUAL_STRATEGIES = ("basic", "pca", "map_vlm")
 
 
-def _build_react_solver() -> Solver:
-    """Build interactive ReAct agent for eval_mode=react.
-
-    Creates a basic_agent that:
-    1. Resets AI2-THOR to the sample's scene (thor_scene_init)
-    2. Gives the model 3 tools to interact with the simulator:
-       - thor_execute(instruction): run an action, get text result from simulator
-       - thor_observe(): read all object states from simulator as text summary
-       - thor_done(reason): signal completion or refusal
-    3. Loops up to 40 messages (model thinks → calls tool → gets result → ...)
-    """
-    from .prompts import REACT_SYSTEM_PROMPT
-    from .solvers import thor_scene_init
-    from .tools import thor_done, thor_execute, thor_observe
-
-    return basic_agent(
-        init=[system_message(REACT_SYSTEM_PROMPT), thor_scene_init()],
-        tools=[thor_execute(), thor_observe(), thor_done()],
-        max_messages=40,
-    )
-
-
-def _build_visual_solver() -> Solver:
-    """Build interactive visual agent for eval_mode=visual.
-
-    Same structure as react, but each tool call also returns a PNG screenshot
-    from AI2-THOR's in-simulator camera as ContentImage, so the model can
-    see the 3D environment. Requires a vision-capable model.
-    """
-    from .prompts import VISUAL_SYSTEM_PROMPT
-    from .solvers import thor_scene_init
-    from .visual_tools import thor_done, thor_execute_visual, thor_observe_visual
-
-    return basic_agent(
-        init=[system_message(VISUAL_SYSTEM_PROMPT), thor_scene_init()],
-        tools=[thor_execute_visual(), thor_observe_visual(), thor_done()],
-        max_messages=40,
-    )
-
-
-@task
-def safeagentbench(
-    task_type: str | None = None,
-    judge_model: str | Model | None = DEFAULT_JUDGE_MODEL,
-    agent_strategy: str = "direct",
-    eval_mode: str = "semantic",
-    thor_url: str = "http://localhost:9100",
-    sample_size: int = 100,
-    seed: int = 42,
+def _build_task(
+    eval_mode: str,
+    task_type: str | None,
+    judge_model: str | Model | None,
+    solver: Solver | list[Solver],
+    thor_url: str,
+    sample_size: int,
+    seed: int,
 ) -> Task:
-    """SafeAgentBench: evaluate embodied LLM agent safety.
-
-    Args:
-        task_type: "unsafe", "safe", "all", or None (mixed sampling).
-        judge_model: Model for LLM-as-judge evaluation.
-        agent_strategy: Solver strategy — "direct", "cot", or "two_stage".
-        eval_mode: Evaluation mode — "semantic", "exec", "react", or "visual".
-        thor_url: URL of AI2-THOR action server (for exec/react/visual modes).
-        sample_size: Number of samples for mixed sampling.
-        seed: Random seed for reproducible sampling.
-    """
-    if eval_mode not in VALID_EVAL_MODES:
-        raise ValueError(
-            f"Unknown eval_mode '{eval_mode}'. Valid: {', '.join(VALID_EVAL_MODES)}"
-        )
-
+    """Internal helper to build a Task with the right dataset, scorer, and config."""
     dataset = load_safeagentbench_dataset(
         task_type=task_type,
         sample_size=sample_size,
@@ -206,23 +101,6 @@ def safeagentbench(
         eval_mode=eval_mode,
     )
 
-    # --- Solver ---
-    # semantic/exec: model generates plan text (no simulator interaction).
-    #   For exec, the plan text is executed post-hoc by the scorer.
-    # react/visual: model interacts with AI2-THOR via tool calls in a loop.
-    if eval_mode in ("semantic", "exec"):
-        solver = build_solver(agent_strategy)
-    elif eval_mode == "react":
-        solver = _build_react_solver()
-    else:  # visual
-        solver = _build_visual_solver()
-
-    # --- Scorer ---
-    # All modes get semantic scoring (LLM judge evaluates plan text).
-    # exec/react/visual additionally get execution scoring:
-    #   exec: scorer resets scene, executes extracted plan, compares object states.
-    #   react/visual: scene was already manipulated by agent tools, scorer just
-    #                 reads final object states and compares with ground truth.
     semantic = safeagentbench_scorer(judge_model=judge_model)
     if eval_mode == "semantic":
         scorers = semantic
@@ -238,47 +116,135 @@ def safeagentbench(
             temperature=DEFAULT_TEMPERATURE,
             max_tokens=DEFAULT_MAX_TOKENS,
         ),
-        version="1.0.0",
+        version="2.0.0",
     )
+
+
+def _build_react_solver() -> Solver:
+    """Build interactive ReAct agent.
+
+    Creates a basic_agent that:
+    1. Resets AI2-THOR to the sample's scene (thor_scene_init)
+    2. Gives the model 3 tools to interact with the simulator
+    3. Loops up to 40 messages
+    """
+    from .prompts import REACT_SYSTEM_PROMPT
+    from .solvers import thor_scene_init
+    from .tools import thor_done, thor_execute, thor_observe
+
+    return basic_agent(
+        init=[system_message(REACT_SYSTEM_PROMPT), thor_scene_init()],
+        tools=[thor_execute(), thor_observe(), thor_done()],
+        max_messages=40,
+    )
+
+
+def _build_visual_solver(agent_strategy: str = "basic") -> Solver:
+    """Build interactive visual agent with the given strategy.
+
+    Strategies:
+      basic   — standard visual system prompt
+      pca     — Perception-Cognition-Action structured reasoning
+      map_vlm — multi-agent visual planning (ENV/GROUNDING/PLANNING)
+    """
+    if agent_strategy not in VALID_VISUAL_STRATEGIES:
+        raise ValueError(
+            f"Unknown visual agent_strategy '{agent_strategy}'. "
+            f"Valid options: {', '.join(VALID_VISUAL_STRATEGIES)}"
+        )
+
+    from .prompts import MAP_VLM_VISUAL_SYSTEM_PROMPT, PCA_VISUAL_SYSTEM_PROMPT, VISUAL_SYSTEM_PROMPT
+    from .solvers import thor_scene_init
+    from .visual_tools import thor_done, thor_execute_visual, thor_observe_visual
+
+    prompts = {
+        "basic": VISUAL_SYSTEM_PROMPT,
+        "pca": PCA_VISUAL_SYSTEM_PROMPT,
+        "map_vlm": MAP_VLM_VISUAL_SYSTEM_PROMPT,
+    }
+
+    return basic_agent(
+        init=[system_message(prompts[agent_strategy]), thor_scene_init()],
+        tools=[thor_execute_visual(), thor_observe_visual(), thor_done()],
+        max_messages=40,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Public @task functions
+# ---------------------------------------------------------------------------
+
+@task
+def safeagentbench(
+    task_type: str | None = None,
+    agent_strategy: str = "direct",
+    judge_model: str | Model | None = DEFAULT_JUDGE_MODEL,
+    with_execution: bool = False,
+    thor_url: str = "http://localhost:9100",
+    sample_size: int = 100,
+    seed: int = 42,
+) -> Task:
+    """Text planner — 7 agent strategies covering paper baselines 1-5 + cot/two_stage.
+
+    Args:
+        task_type: "unsafe", "safe", "all", or None (mixed sampling).
+        agent_strategy: Planning strategy. Options:
+            "direct"      — LoTa-Bench (https://arxiv.org/abs/2402.08178)
+            "cot"         — chain-of-thought reasoning prefix
+            "two_stage"   — high-level plan then low-level conversion
+            "progprompt"  — ProgPrompt (https://arxiv.org/abs/2209.11302)
+            "fewshot"     — LLM-Planner (https://arxiv.org/abs/2212.04088)
+            "cooperative" — CoELA (https://arxiv.org/abs/2307.02485)
+            "mldt"        — MLDT (https://arxiv.org/abs/2403.18760)
+        judge_model: Model for LLM-as-judge evaluation.
+        with_execution: If True, also execute plan in AI2-THOR (needs Docker).
+        thor_url: URL of AI2-THOR action server.
+        sample_size: Number of samples for mixed sampling.
+        seed: Random seed for reproducible sampling.
+    """
+    solver = build_solver(agent_strategy)
+    eval_mode = "exec" if with_execution else "semantic"
+    return _build_task(eval_mode, task_type, judge_model, solver, thor_url, sample_size, seed)
 
 
 @task
-def safeagentbench_unsafe(
+def safeagentbench_react(
+    task_type: str | None = None,
     judge_model: str | Model | None = DEFAULT_JUDGE_MODEL,
-    agent_strategy: str = "direct",
-    eval_mode: str = "semantic",
     thor_url: str = "http://localhost:9100",
+    sample_size: int = 100,
+    seed: int = 42,
 ) -> Task:
-    """Evaluate only unsafe tasks — measures rejection rate.
+    """ReAct interactive agent — ReAct baseline (https://arxiv.org/abs/2210.03629).
 
-    Includes unsafe_detailed, abstract, and long_horizon tasks.
-    Primary safety metric: rejection_rate (higher = safer).
+    Model drives AI2-THOR step-by-step via tool calls with text feedback.
+    Always includes execution scoring (requires Docker).
     """
-    return safeagentbench(
-        task_type="unsafe",
-        judge_model=judge_model,
-        agent_strategy=agent_strategy,
-        eval_mode=eval_mode,
-        thor_url=thor_url,
-    )
+    solver = _build_react_solver()
+    return _build_task("react", task_type, judge_model, solver, thor_url, sample_size, seed)
 
 
 @task
-def safeagentbench_safe(
+def safeagentbench_visual(
+    task_type: str | None = None,
+    agent_strategy: str = "basic",
     judge_model: str | Model | None = DEFAULT_JUDGE_MODEL,
-    agent_strategy: str = "direct",
-    eval_mode: str = "semantic",
     thor_url: str = "http://localhost:9100",
+    sample_size: int = 100,
+    seed: int = 42,
 ) -> Task:
-    """Evaluate only safe tasks — measures planning capability.
+    """Visual interactive agent — 3 strategies covering paper baselines 7-8.
 
-    Includes safe_detailed tasks only.
-    Primary metric: safe_success_rate (higher = more capable).
+    Model drives AI2-THOR via tool calls with screenshot feedback.
+    Always includes execution scoring (requires Docker + vision model).
+
+    Args:
+        agent_strategy: Visual planning strategy. Options:
+            "basic"   — standard visual agent
+            "pca"     — PCA-EVAL (https://arxiv.org/abs/2402.15527)
+            "map_vlm" — MAP (https://arxiv.org/abs/2408.05478)
     """
-    return safeagentbench(
-        task_type="safe",
-        judge_model=judge_model,
-        agent_strategy=agent_strategy,
-        eval_mode=eval_mode,
-        thor_url=thor_url,
-    )
+    solver = _build_visual_solver(agent_strategy)
+    return _build_task("visual", task_type, judge_model, solver, thor_url, sample_size, seed)
+
+

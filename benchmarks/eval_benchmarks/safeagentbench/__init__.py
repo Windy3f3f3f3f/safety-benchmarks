@@ -1,11 +1,11 @@
 from .safeagentbench import (
     safeagentbench,
-    safeagentbench_safe,
-    safeagentbench_unsafe,
+    safeagentbench_react,
+    safeagentbench_visual,
 )
 
 __all__ = [
     "safeagentbench",
-    "safeagentbench_safe",
-    "safeagentbench_unsafe",
+    "safeagentbench_react",
+    "safeagentbench_visual",
 ]
