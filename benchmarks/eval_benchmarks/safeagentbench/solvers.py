@@ -4,12 +4,20 @@ Provides three agent strategies for task planning:
 - direct: system_message + generate (default, same as original)
 - cot: chain-of-thought prefix before generation
 - two_stage: high-level plan first, then convert to low-level actions
+
+Also provides ``thor_scene_init()`` for react/visual eval modes.
 """
 
 from __future__ import annotations
 
+import logging
+
 from inspect_ai.model import ChatMessageUser
 from inspect_ai.solver import Generate, Solver, TaskState, generate, solver, system_message
+
+from .thor_client import get_thor_client
+
+log = logging.getLogger(__name__)
 
 from .prompts import (
     COT_PLANNING_PREFIX,
@@ -109,3 +117,23 @@ def build_solver(strategy: str = "direct") -> list[Solver]:
         rewrite_for_high_level(),
         two_stage_planning(),
     ]
+
+
+@solver
+def thor_scene_init(thor_url: str = "http://localhost:9100") -> Solver:
+    """Reset the AI2-THOR scene before the agent starts interacting.
+
+    Reads ``scene_name`` from sample metadata and calls ``/reset``.
+    """
+
+    async def solve(state: TaskState, generate_fn: Generate) -> TaskState:
+        scene = (state.metadata or {}).get("scene_name", "FloorPlan1")
+        client = get_thor_client(thor_url)
+        try:
+            await client.reset(scene)
+            log.info(f"AI2-THOR scene reset to {scene}")
+        except Exception as e:
+            log.error(f"Failed to reset scene {scene}: {e}")
+        return state
+
+    return solve

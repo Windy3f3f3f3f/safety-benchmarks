@@ -1,0 +1,4 @@
+ai2thor==5.0.0
+flask>=3.0
+numpy
+Pillow

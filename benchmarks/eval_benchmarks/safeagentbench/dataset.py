@@ -59,6 +59,7 @@ def _record_to_sample(
     task_type: str,
     safety_label: str,
     index: int,
+    eval_mode: str = "semantic",
 ) -> Sample:
     """Convert a dataset record to an inspect_ai Sample."""
     task = record["instruction"]
@@ -70,6 +71,13 @@ def _record_to_sample(
         ref_steps_str = "\n".join(ref_steps)
     else:
         ref_steps_str = str(ref_steps)
+
+    # final_state for execution evaluation (None → no exec eval possible)
+    final_state = record.get("final_state")
+    has_final_state = final_state is not None
+
+    # Store final_state as JSON string to survive metadata serialization
+    final_state_json = json.dumps(final_state) if final_state is not None else None
 
     return Sample(
         input=prompt,
@@ -84,6 +92,9 @@ def _record_to_sample(
             ),
             "reference_steps": ref_steps_str,
             "scene_name": record.get("scene_name", ""),
+            "final_state": final_state_json,
+            "has_final_state": has_final_state,
+            "eval_mode": eval_mode,
         },
     )
 
@@ -92,6 +103,7 @@ def load_safeagentbench_dataset(
     task_type: str | None = None,
     sample_size: int | None = 100,
     seed: int = 42,
+    eval_mode: str = "semantic",
 ) -> MemoryDataset:
     """Load SafeAgentBench dataset with mixed sampling.
 
@@ -116,14 +128,14 @@ def load_safeagentbench_dataset(
 
     if task_type == "safe":
         for r in safe_detailed:
-            samples.append(_record_to_sample(r, "safe_detailed", "safe", idx))
+            samples.append(_record_to_sample(r, "safe_detailed", "safe", idx, eval_mode))
             idx += 1
         return MemoryDataset(samples=samples, name="safeagentbench_safe")
 
     if task_type == "unsafe":
         for r in unsafe_detailed:
             samples.append(
-                _record_to_sample(r, "unsafe_detailed", "unsafe", idx)
+                _record_to_sample(r, "unsafe_detailed", "unsafe", idx, eval_mode)
             )
             idx += 1
         for r in abstract_raw:
@@ -131,11 +143,11 @@ def load_safeagentbench_dataset(
             if isinstance(r["instruction"], list):
                 r = dict(r)
                 r["instruction"] = r["instruction"][0]
-            samples.append(_record_to_sample(r, "abstract", "unsafe", idx))
+            samples.append(_record_to_sample(r, "abstract", "unsafe", idx, eval_mode))
             idx += 1
         for r in long_horizon:
             samples.append(
-                _record_to_sample(r, "long_horizon", "unsafe", idx)
+                _record_to_sample(r, "long_horizon", "unsafe", idx, eval_mode)
             )
             idx += 1
         return MemoryDataset(samples=samples, name="safeagentbench_unsafe")
@@ -143,21 +155,21 @@ def load_safeagentbench_dataset(
     if task_type == "all":
         for r in unsafe_detailed:
             samples.append(
-                _record_to_sample(r, "unsafe_detailed", "unsafe", idx)
+                _record_to_sample(r, "unsafe_detailed", "unsafe", idx, eval_mode)
             )
             idx += 1
         for r in safe_detailed:
-            samples.append(_record_to_sample(r, "safe_detailed", "safe", idx))
+            samples.append(_record_to_sample(r, "safe_detailed", "safe", idx, eval_mode))
             idx += 1
         for r in abstract_raw:
             if isinstance(r["instruction"], list):
                 r = dict(r)
                 r["instruction"] = r["instruction"][0]
-            samples.append(_record_to_sample(r, "abstract", "unsafe", idx))
+            samples.append(_record_to_sample(r, "abstract", "unsafe", idx, eval_mode))
             idx += 1
         for r in long_horizon:
             samples.append(
-                _record_to_sample(r, "long_horizon", "unsafe", idx)
+                _record_to_sample(r, "long_horizon", "unsafe", idx, eval_mode)
             )
             idx += 1
         return MemoryDataset(samples=samples, name="safeagentbench")
@@ -176,13 +188,13 @@ def load_safeagentbench_dataset(
         chosen = rng.sample(pool, min(5, len(pool)))
         for r in chosen:
             samples.append(
-                _record_to_sample(r, "unsafe_detailed", "unsafe", idx)
+                _record_to_sample(r, "unsafe_detailed", "unsafe", idx, eval_mode)
             )
             idx += 1
 
     # 30 safe detailed
     for r in rng.sample(safe_detailed, 30):
-        samples.append(_record_to_sample(r, "safe_detailed", "safe", idx))
+        samples.append(_record_to_sample(r, "safe_detailed", "safe", idx, eval_mode))
         idx += 1
 
     # 10 abstract (first instruction variant)
@@ -190,12 +202,12 @@ def load_safeagentbench_dataset(
         r = dict(r)
         if isinstance(r["instruction"], list):
             r["instruction"] = r["instruction"][0]
-        samples.append(_record_to_sample(r, "abstract", "unsafe", idx))
+        samples.append(_record_to_sample(r, "abstract", "unsafe", idx, eval_mode))
         idx += 1
 
     # 10 long horizon
     for r in rng.sample(long_horizon, 10):
-        samples.append(_record_to_sample(r, "long_horizon", "unsafe", idx))
+        samples.append(_record_to_sample(r, "long_horizon", "unsafe", idx, eval_mode))
         idx += 1
 
     return MemoryDataset(samples=samples, name="safeagentbench")
