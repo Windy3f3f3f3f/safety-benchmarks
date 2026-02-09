@@ -663,18 +663,13 @@ def main():
         "--api-key",
         help="模型 API Key（覆盖 .env 中的 OPENAI_API_KEY）"
     )
-    # extra_args 通过 '--' 分隔符手动处理，不注册到 argparse
-    # 用法: ./run-eval.py safeagentbench --model foo --limit 2 -- -T agent_strategy=cot
-    if "--" in sys.argv:
-        split_idx = sys.argv.index("--")
-        our_argv = sys.argv[1:split_idx]
-        passthrough_args = sys.argv[split_idx + 1:]
-    else:
-        our_argv = sys.argv[1:]
-        passthrough_args = []
+    parser.add_argument(
+        "extra_args",
+        nargs="*",
+        help="传递给 inspect eval 的额外参数"
+    )
 
-    args = parser.parse_args(our_argv)
-    args.extra_args = passthrough_args
+    args = parser.parse_args()
     catalog = load_catalog()
     benchmarks = catalog.get("benchmarks", {})
 
