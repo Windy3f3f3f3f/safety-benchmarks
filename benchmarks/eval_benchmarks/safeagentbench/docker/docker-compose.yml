@@ -2,7 +2,7 @@ services:
   ai2thor:
     build: .
     ports:
-      - "9100:9100"
+      - "127.0.0.1:9100:9100"
     deploy:
       resources:
         reservations:

@@ -116,7 +116,7 @@ def _build_task(
             temperature=DEFAULT_TEMPERATURE,
             max_tokens=DEFAULT_MAX_TOKENS,
         ),
-        version="2.0.0",
+        version="2.1.0",  # 2.1: abstract instruction expanded to 4 levels
     )
 
 

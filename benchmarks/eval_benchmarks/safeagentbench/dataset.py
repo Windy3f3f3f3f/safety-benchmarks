@@ -2,6 +2,10 @@
 
 Loads 4 JSONL files (safe_detailed, unsafe_detailed, abstract, long_horizon)
 and applies mixed sampling strategy for evaluation.
+
+Abstract records contain 4 instruction variants per sample at different
+abstraction levels (0=most specific, 3=most abstract). Each variant is
+expanded into a separate Sample with ``abstraction_level`` metadata.
 """
 
 from __future__ import annotations
@@ -60,8 +64,14 @@ def _record_to_sample(
     safety_label: str,
     index: int,
     eval_mode: str = "semantic",
+    abstraction_level: int | None = None,
 ) -> Sample:
-    """Convert a dataset record to an inspect_ai Sample."""
+    """Convert a dataset record to an inspect_ai Sample.
+
+    Args:
+        abstraction_level: For abstract tasks, 0 (most specific) to 3 (most abstract).
+            None for non-abstract tasks.
+    """
     task = record["instruction"]
     prompt = PLANNING_TASK_PROMPT.format(task=task)
 
@@ -79,24 +89,58 @@ def _record_to_sample(
     # Store final_state as JSON string to survive metadata serialization
     final_state_json = json.dumps(final_state) if final_state is not None else None
 
+    id_suffix = f"_L{abstraction_level}" if abstraction_level is not None else ""
+
+    metadata: dict[str, Any] = {
+        "task_instruction": task,
+        "safety_label": safety_label,
+        "task_type": task_type,
+        "risk_category": _normalize_risk_category(
+            record.get("risk_category", "")
+        ),
+        "reference_steps": ref_steps_str,
+        "scene_name": record.get("scene_name", ""),
+        "final_state": final_state_json,
+        "has_final_state": has_final_state,
+        "eval_mode": eval_mode,
+    }
+    if abstraction_level is not None:
+        metadata["abstraction_level"] = abstraction_level
+
     return Sample(
         input=prompt,
         target="",
-        id=f"safeagentbench_{task_type}_{index}",
-        metadata={
-            "task_instruction": task,
-            "safety_label": safety_label,
-            "task_type": task_type,
-            "risk_category": _normalize_risk_category(
-                record.get("risk_category", "")
-            ),
-            "reference_steps": ref_steps_str,
-            "scene_name": record.get("scene_name", ""),
-            "final_state": final_state_json,
-            "has_final_state": has_final_state,
-            "eval_mode": eval_mode,
-        },
+        id=f"safeagentbench_{task_type}_{index}{id_suffix}",
+        metadata=metadata,
     )
+
+
+def _expand_abstract_record(
+    record: dict[str, Any],
+    index: int,
+    eval_mode: str = "semantic",
+) -> list[Sample]:
+    """Expand one abstract record into 4 samples (one per abstraction level).
+
+    Each abstract record contains instruction as a list of 4 strings:
+      [0] most specific, [1] somewhat abstract, [2] more abstract, [3] most abstract.
+    Returns 4 Samples sharing the same index but distinguished by L0-L3 suffix.
+    """
+    instructions = record["instruction"]
+    if not isinstance(instructions, list):
+        instructions = [instructions]
+
+    samples = []
+    for level, instruction in enumerate(instructions):
+        r_copy = dict(record)
+        r_copy["instruction"] = instruction
+        samples.append(
+            _record_to_sample(
+                r_copy, "abstract", "unsafe", index, eval_mode,
+                abstraction_level=level,
+            )
+        )
+    return samples
 
 
 def load_safeagentbench_dataset(
@@ -139,11 +183,7 @@ def load_safeagentbench_dataset(
             )
             idx += 1
         for r in abstract_raw:
-            # Use first instruction variant for abstract tasks
-            if isinstance(r["instruction"], list):
-                r = dict(r)
-                r["instruction"] = r["instruction"][0]
-            samples.append(_record_to_sample(r, "abstract", "unsafe", idx, eval_mode))
+            samples.extend(_expand_abstract_record(r, idx, eval_mode))
             idx += 1
         for r in long_horizon:
             samples.append(
@@ -162,10 +202,7 @@ def load_safeagentbench_dataset(
             samples.append(_record_to_sample(r, "safe_detailed", "safe", idx, eval_mode))
             idx += 1
         for r in abstract_raw:
-            if isinstance(r["instruction"], list):
-                r = dict(r)
-                r["instruction"] = r["instruction"][0]
-            samples.append(_record_to_sample(r, "abstract", "unsafe", idx, eval_mode))
+            samples.extend(_expand_abstract_record(r, idx, eval_mode))
             idx += 1
         for r in long_horizon:
             samples.append(
@@ -174,7 +211,7 @@ def load_safeagentbench_dataset(
             idx += 1
         return MemoryDataset(samples=samples, name="safeagentbench")
 
-    # Default: mixed sampling (50 unsafe_detailed + 30 safe + 10 abstract + 10 long_horizon)
+    # Default: mixed sampling (50 unsafe_detailed + 30 safe + 40 abstract [10 records × 4 levels] + 10 long_horizon = 130)
     rng = random.Random(seed)
 
     # 50 unsafe detailed — stratified by 10 categories, 5 each
@@ -197,12 +234,9 @@ def load_safeagentbench_dataset(
         samples.append(_record_to_sample(r, "safe_detailed", "safe", idx, eval_mode))
         idx += 1
 
-    # 10 abstract (first instruction variant)
+    # 10 abstract records × 4 abstraction levels = 40 samples
     for r in rng.sample(abstract_raw, 10):
-        r = dict(r)
-        if isinstance(r["instruction"], list):
-            r["instruction"] = r["instruction"][0]
-        samples.append(_record_to_sample(r, "abstract", "unsafe", idx, eval_mode))
+        samples.extend(_expand_abstract_record(r, idx, eval_mode))
         idx += 1
 
     # 10 long horizon

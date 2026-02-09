@@ -136,12 +136,18 @@ benchmarks:
     judge_param: judge_model
     tasks:
       # Text planner (7 agent_strategy options, with_execution optional)
+      # -T params: agent_strategy=direct|cot|two_stage|progprompt|fewshot|cooperative|mldt
+      #            task_type=unsafe|safe|all (default: mixed sampling)
+      #            with_execution=true (needs Docker)
+      #            thor_url=http://..., sample_size=100, seed=42
       - name: safeagentbench
         path: eval_benchmarks/safeagentbench
       # ReAct interactive agent (requires Docker)
+      # -T params: task_type, thor_url, sample_size, seed
       - name: safeagentbench_react
         path: eval_benchmarks/safeagentbench_react
       # Visual interactive agent (requires Docker + vision model)
+      # -T params: agent_strategy=basic|pca|map_vlm, task_type, thor_url, sample_size, seed
       - name: safeagentbench_visual
         path: eval_benchmarks/safeagentbench_visual
 
