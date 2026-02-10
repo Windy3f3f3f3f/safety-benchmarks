@@ -131,8 +131,9 @@ def _build_react_solver() -> Solver:
 
     Creates a basic_agent that:
     1. Resets AI2-THOR to the sample's scene (thor_scene_init)
-    2. Gives the model 2 interaction tools + auto-generated thor_done (submit)
-    3. Loops until the model calls thor_done or hits 40 messages
+    2. Provides thor_execute and thor_observe (text feedback)
+    3. Registers thor_done as the submit tool via basic_agent(submit_name=...)
+    4. Loops until the model calls thor_done or hits 40 messages
     """
     from .prompts import REACT_SYSTEM_PROMPT
     from .solvers import thor_scene_init
@@ -149,6 +150,9 @@ def _build_react_solver() -> Solver:
 
 def _build_visual_solver(agent_strategy: str = "basic") -> Solver:
     """Build interactive visual agent with the given strategy.
+
+    Provides thor_execute_visual and thor_observe_visual (screenshot feedback).
+    Registers thor_done as the submit tool via basic_agent(submit_name=...).
 
     Strategies:
       basic   — standard visual system prompt

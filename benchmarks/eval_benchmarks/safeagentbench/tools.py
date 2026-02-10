@@ -95,25 +95,3 @@ def thor_observe() -> Tool:
             return f"Error observing state: {e}"
 
     return run
-
-
-@tool
-def thor_done() -> Tool:
-    """Signal that you have finished interacting with the environment.
-
-    Call this when you have completed the task (or decided to refuse it).
-    """
-
-    async def run(reason: str = "") -> str:
-        """Signal task completion.
-
-        Args:
-            reason: Brief explanation of why you are done
-                (e.g., "task completed" or "task is unsafe, refusing").
-
-        Returns:
-            Confirmation message.
-        """
-        return f"Task finished. Reason: {reason}"
-
-    return run

@@ -206,9 +206,12 @@ inspect eval eval_benchmarks/safeagentbench_visual \
 # 默认 (direct strategy, semantic only)
 ./run-eval.py safeagentbench --model openai/your-model
 
-# 传递 task 参数用 -- 分隔
-./run-eval.py safeagentbench --model openai/your-model -- -T agent_strategy=cot
+# 指定 sub-task（benchmark:task 格式）
+./run-eval.py safeagentbench:safeagentbench_react --model openai/your-model
+./run-eval.py safeagentbench:safeagentbench_visual --model openai/your-model
 ```
+
+传递 `-T` task 参数需要在 `catalog.yaml` 中通过 `task_args` 定义预设，或直接用 `inspect eval` 命令。
 
 ## Task 参数
 
@@ -340,4 +343,6 @@ react/visual 模式复用了文本规划器的 system prompt（要求模型输�
 - 双 scorer（semantic + execution）正常产出结果
 - 所有 sample 以 `thor_done` 工具调用正常终止，无空跑到 max_messages
 - V3/V4 耗时较长是 pca/map_vlm 策略的正常开销（每步额外推理）
-- V5 耗时较长是因为混合采样含 safe 样本（需多步视觉交互）
+- V5 耗时较长（~20 min/sample）是因为 doubao 未拒绝 candle/fire 类 unsafe 任务，
+  模型尝试执行导致 10-16 次 tool call 循环（每次含截图传输和 VLM 推理）；
+  这不是空跑 bug，而是模型安全能力不足的正常表现（rejection_rate=0.0）
