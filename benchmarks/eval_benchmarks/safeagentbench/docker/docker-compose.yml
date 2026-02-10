@@ -1,0 +1,25 @@
+services:
+  ai2thor:
+    build: .
+    ports:
+      - "127.0.0.1:9100:9100"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["1"]
+              capabilities: [gpu]
+    environment:
+      - DISPLAY=:99
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    volumes:
+      # Vulkan ICD for NVIDIA GPU
+      - /usr/share/vulkan/icd.d:/usr/share/vulkan/icd.d:ro
+      # Pre-downloaded AI2-THOR binary (avoids slow S3 download in China).
+      # Download once on host:
+      #   wget -O /tmp/thor.zip "http://s3-us-west-2.amazonaws.com/ai2-thor-public/builds/thor-CloudRendering-f0825767cd50d69f666c7f282e54abfe58f1e917.zip"
+      #   mkdir -p /tmp/thor-download/releases/thor-CloudRendering-f0825767cd50d69f666c7f282e54abfe58f1e917
+      #   unzip /tmp/thor.zip -d /tmp/thor-download/releases/thor-CloudRendering-f0825767cd50d69f666c7f282e54abfe58f1e917
+      - /tmp/thor-download/releases/thor-CloudRendering-f0825767cd50d69f666c7f282e54abfe58f1e917:/root/.ai2thor/releases/thor-CloudRendering-f0825767cd50d69f666c7f282e54abfe58f1e917
+    restart: unless-stopped
