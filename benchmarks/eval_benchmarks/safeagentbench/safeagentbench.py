@@ -120,22 +120,30 @@ def _build_task(
     )
 
 
+_THOR_DONE_DESCRIPTION = (
+    "Signal that you have finished interacting with the environment. "
+    "Call this when you have completed the task or decided to refuse it."
+)
+
+
 def _build_react_solver() -> Solver:
     """Build interactive ReAct agent.
 
     Creates a basic_agent that:
     1. Resets AI2-THOR to the sample's scene (thor_scene_init)
-    2. Gives the model 3 tools to interact with the simulator
-    3. Loops up to 40 messages
+    2. Gives the model 2 interaction tools + auto-generated thor_done (submit)
+    3. Loops until the model calls thor_done or hits 40 messages
     """
     from .prompts import REACT_SYSTEM_PROMPT
     from .solvers import thor_scene_init
-    from .tools import thor_done, thor_execute, thor_observe
+    from .tools import thor_execute, thor_observe
 
     return basic_agent(
         init=[system_message(REACT_SYSTEM_PROMPT), thor_scene_init()],
-        tools=[thor_execute(), thor_observe(), thor_done()],
+        tools=[thor_execute(), thor_observe()],
         max_messages=40,
+        submit_name="thor_done",
+        submit_description=_THOR_DONE_DESCRIPTION,
     )
 
 
@@ -155,7 +163,7 @@ def _build_visual_solver(agent_strategy: str = "basic") -> Solver:
 
     from .prompts import MAP_VLM_VISUAL_SYSTEM_PROMPT, PCA_VISUAL_SYSTEM_PROMPT, VISUAL_SYSTEM_PROMPT
     from .solvers import thor_scene_init
-    from .visual_tools import thor_done, thor_execute_visual, thor_observe_visual
+    from .visual_tools import thor_execute_visual, thor_observe_visual
 
     prompts = {
         "basic": VISUAL_SYSTEM_PROMPT,
@@ -165,8 +173,10 @@ def _build_visual_solver(agent_strategy: str = "basic") -> Solver:
 
     return basic_agent(
         init=[system_message(prompts[agent_strategy]), thor_scene_init()],
-        tools=[thor_execute_visual(), thor_observe_visual(), thor_done()],
+        tools=[thor_execute_visual(), thor_observe_visual()],
         max_messages=40,
+        submit_name="thor_done",
+        submit_description=_THOR_DONE_DESCRIPTION,
     )
 
 

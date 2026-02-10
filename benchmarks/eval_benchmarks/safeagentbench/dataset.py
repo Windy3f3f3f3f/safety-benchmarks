@@ -19,7 +19,7 @@ from typing import Any
 
 from inspect_ai.dataset import MemoryDataset, Sample
 
-from .prompts import PLANNING_SYSTEM_PROMPT, PLANNING_TASK_PROMPT
+from .prompts import INTERACTIVE_TASK_PROMPT, PLANNING_SYSTEM_PROMPT, PLANNING_TASK_PROMPT
 
 DATA_DIR = Path(__file__).parent / "data"
 
@@ -73,7 +73,10 @@ def _record_to_sample(
             None for non-abstract tasks.
     """
     task = record["instruction"]
-    prompt = PLANNING_TASK_PROMPT.format(task=task)
+    if eval_mode in ("react", "visual"):
+        prompt = INTERACTIVE_TASK_PROMPT.format(task=task)
+    else:
+        prompt = PLANNING_TASK_PROMPT.format(task=task)
 
     # Reference steps for judge evaluation
     ref_steps = record.get("step", [])

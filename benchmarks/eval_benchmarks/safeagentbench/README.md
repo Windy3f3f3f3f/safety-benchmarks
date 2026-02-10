@@ -289,7 +289,55 @@ safeagentbench/
 |---|---|---|---|
 | 数据集条数 | 750 | 750 (一致) | 无差异 |
 | 运行架构 | Python 进程内直接调 Controller | Docker + HTTP 隔离 | 依赖隔离，避免 AI2-THOR 重型原生依赖污染评测环境 |
+| react/visual 交互模式 | 单次规划：截图→生成完整计划→批量执行 | 迭代 tool-call 循环（inspect_ai `basic_agent`）：模型逐步调用工具、获取反馈、决定下一步 | 本实现的交互循环测试了模型逐步决策和响应环境反馈的能力，与原论文的单次规划评估侧重点不同；模型通过 `thor_done` 工具主动终止交互 |
 | LowLevelPlanner | scipy KDTree | numpy _SimpleKDTree | 行为等价 |
 | abstract instruction | 论文未明确说明用哪个层级 | 4 variants 全部展开，每个为独立 Sample | 完整覆盖 |
 | safe_detailed final_state | 300 条 | 88/300 含 final_state | 涉及空间关系的任务结果不映射到 AI2-THOR 物体属性，故无 final_state |
 | long_horizon 字段 | 50 条 | 50 条，不含 step/risk_category/final_state | 评测目标是规划完成度与安全约束遵守，按设计仅用 judge 评分 |
+
+## Bug Fix: react/visual 模式超时问题
+
+### 问题
+
+react 和 visual 模式的单样本运行时间达 88+ 分钟（2 个 unsafe 样本总计超过 176 分钟），远超预期的 5-10 分钟。
+
+### 根因
+
+**根因 1: `basic_agent()` 未识别 `thor_done` 为终止信号**
+
+inspect_ai 的 `basic_agent()` 通过 `submit_name` 参数识别哪个工具调用代表"任务完成"。默认值为 `"submit"`，而 safeagentbench 使用 `thor_done` 作为终止工具。未配置 `submit_name="thor_done"` 导致模型调用 `thor_done` 后循环不终止，空跑到 `max_messages=40`。
+
+**根因 2: react/visual 使用了文本规划 prompt**
+
+react/visual 模式复用了文本规划器的 system prompt（要求模型输出文本计划），但交互模式需要模型通过 tool call 与环境交互。prompt 不匹配导致模型倾向生成文本而非调用工具，进一步加剧空跑。
+
+### 修复
+
+涉及 3 个文件：
+
+| 文件 | 改动 |
+|---|---|
+| `safeagentbench.py` | `basic_agent()` 添加 `submit_name="thor_done"` |
+| `dataset.py` | react/visual 样本使用 `INTERACTIVE_TASK_PROMPT` 替代文本规划 prompt |
+| `prompts.py` | 新增 `INTERACTIVE_TASK_PROMPT` 模板（指导模型通过工具交互完成任务） |
+
+### 验证
+
+使用 `doubao-seed-1-8-251228` 模型，覆盖全参数组合：
+
+| 测试 | Mode | Strategy | task_type | limit | 耗时 | 结果 |
+|---|---|---|---|---|---|---|
+| V1 | visual | basic | unsafe | 2 | 3:34 | PASS |
+| R1 | react | — | unsafe | 2 | 3:32 | PASS |
+| V2 | visual | basic | safe | 2 | 8:13 | PASS |
+| V3 | visual | pca | unsafe | 2 | 22:43 | PASS |
+| V4 | visual | map_vlm | unsafe | 2 | 24:18 | PASS |
+| R2 | react | — | safe | 2 | 1:47 | PASS |
+| V5 | visual | basic | mixed | 5 | 1:41:37 | PASS |
+| R3 | react | — | mixed | 5 | 3:35 | PASS |
+
+所有测试满足：
+- 双 scorer（semantic + execution）正常产出结果
+- 所有 sample 以 `thor_done` 工具调用正常终止，无空跑到 max_messages
+- V3/V4 耗时较长是 pca/map_vlm 策略的正常开销（每步额外推理）
+- V5 耗时较长是因为混合采样含 safe 样本（需多步视觉交互）
