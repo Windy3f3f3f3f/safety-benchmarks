@@ -127,6 +127,20 @@ benchmarks:
         path: eval_benchmarks/personalized_safety_context_free
       - name: personalized_safety_context_rich
         path: eval_benchmarks/personalized_safety_context_rich
+  hallulens:
+   source: local
+   module: eval_benchmarks/hallulens
+   python: "3.10"
+   tasks:
+      - name: hallulens_task1_precise_wikiqa
+        path: eval_benchmarks/hallulens_task1_precise_wikiqa
+      - name: hallulens_task2_longwiki
+        path: eval_benchmarks/hallulens_task2_longwiki
+      - name: hallulens_task3_nonsense_mixed_entities
+        path: eval_benchmarks/hallulens_task3_nonsense_mixed_entities
+      - name: hallulens_task3_round_robin_nonsense_name
+        path: eval_benchmarks/hallulens_task3_round_robin_nonsense_name
+
 
   # privacylens:
   #   source: local
