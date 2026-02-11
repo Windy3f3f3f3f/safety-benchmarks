@@ -1,0 +1,23 @@
+# ---- HalluLens: ignore large local assets / generated outputs ----
+vendor/HalluLens/output/
+vendor/HalluLens/data/wiki_data/.cache/
+vendor/HalluLens/data/wiki_data_backup/
+vendor/HalluLens/data/auto_non_existing/
+vendor/HalluLens/data/nonexistent_refusal/
+vendor/HalluLens/data/longwiki/.cache/
+vendor/HalluLens/data/longwiki/save/
+
+# large artifacts (keep code; ignore big blobs)
+vendor/HalluLens/data/wiki_data/*.jsonl
+vendor/HalluLens/data/wiki_data/*.txt
+vendor/HalluLens/data/wiki_data/.cache/*.db
+vendor/HalluLens/data/wiki_data/.cache/*.db*
+vendor/HalluLens/data/wiki_data/.cache/**/*tokenizer*/
+vendor/HalluLens/data/**/.cache/
+vendor/HalluLens/data/**/save/
+vendor/HalluLens/data/**/*.csv
+vendor/HalluLens/data/**/*.zip
+vendor/HalluLens/data/**/*.pkl
+vendor/HalluLens/data/**/*.db*
+vendor/HalluLens/data/**/*.jsonl
+vendor/HalluLens/data/**/*.txt
