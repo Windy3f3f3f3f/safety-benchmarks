@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(conda clean:*)",
+      "Bash(uv:*)",
+      "Bash(pip install:*)",
+      "Bash(conda run:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git rm:*)",
+      "Bash(git branch:*)",
+      "Bash(git worktree add:*)",
+      "Bash(tee:*)",
+      "Bash(ls:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)",
+      "Bash(python3:*)",
+      "Bash(\".venvs/asb/Scripts/python.exe\":*)"
+    ]
+  },
+  "outputStyle": "default"
+}
