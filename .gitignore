@@ -63,4 +63,7 @@ image.png
 run-eval-salt.py
 token_stats_*.py
 
+# Source data (kept locally but not tracked)
+ASB_SOURCE_DATA/
+
 third_party/
