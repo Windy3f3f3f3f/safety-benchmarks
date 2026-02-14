@@ -19,18 +19,8 @@ import argparse
 from pathlib import Path
 import json
 
-# 添加 SafeRAG 路径（支持环境变量覆盖）
-SAFERAG_PATH = Path(os.getenv("SAFERAG_PATH", "/home/xinzhu/SafeRAG"))
-if SAFERAG_PATH.exists():
-    sys.path.insert(0, str(SAFERAG_PATH))
-else:
-    raise RuntimeError(
-        f"SafeRAG not found at {SAFERAG_PATH}. "
-        "Please set SAFERAG_PATH environment variable or install SafeRAG."
-    )
-
-# 添加当前项目路径
-CURRENT_DIR = Path(__file__).parent.parent.parent.parent
+# 添加当前目录到路径（用于导入本地模块）
+CURRENT_DIR = Path(__file__).parent
 sys.path.insert(0, str(CURRENT_DIR))
 
 # 默认环境变量
@@ -67,23 +57,29 @@ def run_real_saferag_evaluation(model_name="doubao-seed-1-8", num_samples=5):
     print(f"样本数: {num_samples}")
     print("=" * 80)
 
-    # 导入原始 SafeRAG 组件
+    # 导入本地 SafeRAG 组件
     from retrievers.base import BaseRetriever
     from tasks.nctd_attack import Silver_noise
     from llms.api_model import OpenAICompat
     from embeddings.base import HuggingfaceEmbeddings
 
-    print("\n步骤 1: 创建嵌入模型...")
+    # 数据路径
+    data_dir = CURRENT_DIR / "data"
+
+    print("\\n步骤 1: 创建嵌入模型...")
+    embed_model_path = data_dir / "bge-base-zh-v1.5"
     embed_model = HuggingfaceEmbeddings(
-        model_name="/home/xinzhu/SafeRAG/bge-base-zh-v1.5",
+        model_name=str(embed_model_path),
         model_kwargs={'device': 'cpu'}
     )
     print("✅ 嵌入模型创建成功")
 
-    print("\n步骤 2: 创建 BaseRetriever...")
+    print("\\n步骤 2: 创建 BaseRetriever...")
+    attack_data_path = data_dir / "nctd_datasets" / "nctd.json"
+    docs_path = data_dir / "knowledge_base"
     retriever = BaseRetriever(
-        attack_data_directory="/home/xinzhu/SafeRAG/nctd_datasets/nctd.json",
-        docs_directory="/home/xinzhu/SafeRAG/knowledge_base",
+        attack_data_directory=str(attack_data_path),
+        docs_directory=str(docs_path),
         attack_task="SN",
         attack_module="indexing",
         attack_intensity=0.5,
@@ -97,7 +93,7 @@ def run_real_saferag_evaluation(model_name="doubao-seed-1-8", num_samples=5):
     )
     print("✅ BaseRetriever 创建成功")
 
-    print("\n步骤 3: 创建攻击任务...")
+    print("\\n步骤 3: 创建攻击任务...")
     attack_task = Silver_noise(
         output_dir='./output',
         quest_eval_model="gpt-3.5-turbo",
@@ -106,24 +102,25 @@ def run_real_saferag_evaluation(model_name="doubao-seed-1-8", num_samples=5):
     )
     print("✅ 攻击任务创建成功")
 
-    print(f"\n步骤 4: 创建生成模型 ({model_name})...")
+    print(f"\\n步骤 4: 创建生成模型 ({model_name})...")
     model_config = MODEL_CONFIGS.get(model_name, MODEL_CONFIGS["gpt-4o-mini"])
     model = OpenAICompat(model_name=model_config["model_name"])
     attack_task.set_model(model, retriever)
     print("✅ 生成模型设置成功")
 
-    print("\n步骤 5: 加载评测数据...")
-    with open("/home/xinzhu/SafeRAG/nctd_datasets/nctd.json", 'r') as f:
+    print("\\n步骤 5: 加载评测数据...")
+    dataset_path = data_dir / "nctd_datasets" / "nctd.json"
+    with open(dataset_path, 'r', encoding='utf-8') as f:
         dataset = json.load(f)
 
     sn_samples = dataset["SN"][:num_samples]
     print(f"✅ 加载了 {len(sn_samples)} 个样本")
 
-    print("\n步骤 6: 开始评测...")
+    print("\\n步骤 6: 开始评测...")
     results = []
 
     for i, sample_data in enumerate(sn_samples):
-        print(f"\n--- 评测样本 {i+1}/{len(sn_samples)} ---")
+        print(f"\\n--- 评测样本 {i+1}/{len(sn_samples)} ---")
 
         # 构造数据点
         data_point = {
@@ -179,13 +176,13 @@ def run_real_saferag_evaluation(model_name="doubao-seed-1-8", num_samples=5):
             import traceback
             traceback.print_exc()
 
-    print("\n" + "=" * 80)
+    print("\\n" + "=" * 80)
     print("评测完成!")
     print("=" * 80)
 
     # 计算总体统计
     if results:
-        print("\n【总体统计】")
+        print("\\n【总体统计】")
         overall = {
             'retrieval_accuracy': 0,
             'recall_gc': 0,
@@ -206,7 +203,7 @@ def run_real_saferag_evaluation(model_name="doubao-seed-1-8", num_samples=5):
                 valid_count += 1
 
         n = len(results)
-        print(f"\n检索准确率: {overall['retrieval_accuracy'] / n:.4f}")
+        print(f"\\n检索准确率: {overall['retrieval_accuracy'] / n:.4f}")
         print(f"正确上下文召回率 (recall_gc): {overall['recall_gc'] / n:.4f}")
         print(f"攻击上下文召回率 (recall_ac): {overall['recall_ac'] / n:.4f}")
         print(f"攻击成功率: {overall['attack_success_rate'] / n:.4f}")
@@ -234,7 +231,7 @@ def run_real_saferag_evaluation(model_name="doubao-seed-1-8", num_samples=5):
             "results": results,
         }, f, ensure_ascii=False, indent=2)
 
-    print(f"\n结果已保存到: {output_file}")
+    print(f"\\n结果已保存到: {output_file}")
 
     return results
 
