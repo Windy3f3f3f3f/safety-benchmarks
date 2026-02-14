@@ -24,7 +24,6 @@ import argparse
 import fnmatch
 import json
 import os
-import platform
 import re
 import subprocess
 import sys
@@ -81,15 +80,12 @@ def get_venv_path(benchmark_name: str) -> Path:
 
 def get_venv_python(benchmark_name: str) -> Path:
     """获取 benchmark 虚拟环境的 Python 路径"""
-    venv_dir = "Scripts" if platform.system() == "Windows" else "bin"
-    python_exe = "python.exe" if platform.system() == "Windows" else "python"
-    return get_venv_path(benchmark_name) / venv_dir / python_exe
+    return get_venv_path(benchmark_name) / "bin" / "python"
 
 
 def get_venv_inspect(benchmark_name: str) -> Path:
     """获取 benchmark 虚拟环境的 inspect 命令路径"""
-    venv_dir = "Scripts" if platform.system() == "Windows" else "bin"
-    return get_venv_path(benchmark_name) / venv_dir / "inspect"
+    return get_venv_path(benchmark_name) / "bin" / "inspect"
 
 
 def setup_benchmark_env(benchmark_name: str, config: dict, force: bool = False) -> bool:
@@ -113,12 +109,8 @@ def setup_benchmark_env(benchmark_name: str, config: dict, force: bool = False) 
     print(f"  创建环境: {venv_path} (Python {python_version})")
 
     # 创建虚拟环境
-    uv_venv_cmd = ["uv", "venv", str(venv_path), "--python", python_version]
-    if force:
-        uv_venv_cmd.append("--clear")
-
     result = subprocess.run(
-        uv_venv_cmd,
+        ["uv", "venv", str(venv_path), "--python", python_version],
         capture_output=True,
         text=True
     )
@@ -442,8 +434,7 @@ def run_eval(benchmark_name: str, task_spec: str, config: dict,
              extra_args: list = None, dry_run: bool = False,
              task_config: dict = None,
              no_index: bool = False, index_file: Path = None,
-             api_base: str = None, api_key: str = None,
-             log_suffix: str = None) -> int:
+             api_base: str = None, api_key: str = None) -> int:
     """运行评估"""
 
     # 确保环境存在
@@ -457,15 +448,8 @@ def run_eval(benchmark_name: str, task_spec: str, config: dict,
     model_for_inspect = normalize_model_name(model)
 
     # 设置结果目录
-    # mm_safety_bench 使用单独目录（按样本数）
-    if benchmark_name == "mm_safety_bench":
-        # 对于limit参数，使用具体数字；否则用"all"
-        sample_count = str(limit) if limit else "all"
-        # 支持 --log-suffix 参数（例如: 2 -> total2_100）
-        dir_prefix = f"total{log_suffix}" if log_suffix else "total"
-        results_dir = PROJECT_ROOT / "logs" / f"{dir_prefix}_{sample_count}"
-    else:
-        results_dir = PROJECT_ROOT / "logs"
+    sanitized_model = sanitize_model_name(model)
+    results_dir = PROJECT_ROOT / "results" / sanitized_model / benchmark_name / "logs"
     results_dir.mkdir(parents=True, exist_ok=True)
 
     # 设置环境变量
@@ -680,10 +664,6 @@ def main():
         help="模型 API Key（覆盖 .env 中的 OPENAI_API_KEY）"
     )
     parser.add_argument(
-        "--log-suffix",
-        help="日志目录后缀（例如: 2 会生成 total2_100 而非 total_100）"
-    )
-    parser.add_argument(
         "extra_args",
         nargs="*",
         help="传递给 inspect eval 的额外参数"
@@ -796,7 +776,6 @@ def main():
                     index_file=args.index_file,
                     api_base=args.api_base,
                     api_key=args.api_key,
-                    log_suffix=args.log_suffix,
                 )
 
                 if returncode == 0:
@@ -919,7 +898,6 @@ def main():
         index_file=args.index_file,
         api_base=args.api_base,
         api_key=args.api_key,
-        log_suffix=args.log_suffix,
     )
 
 
