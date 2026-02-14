@@ -1,0 +1,9 @@
+# MM-SafetyBench Benchmark Requirements
+#
+# No additional dependencies required
+# All dependencies provided by safety-benchmarks main environment
+#
+# For standalone installation, requires:
+# - inspect_ai >= 0.3.70
+# - openai >= 1.0.0
+# - Python >= 3.10

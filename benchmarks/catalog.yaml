@@ -128,6 +128,19 @@ benchmarks:
       - name: personalized_safety_context_rich
         path: eval_benchmarks/personalized_safety_context_rich
 
+  mm_safety_bench:
+    source: local
+    module: eval_benchmarks/mm_safety_bench
+    python: "3.10"
+    judge_model: openai/gpt-4o
+    judge_param: judge_model
+    tasks:
+      - name: mm_safety_bench_illegal_activity
+        path: eval_benchmarks/mm_safety_bench_illegal_activity
+        task_args:
+          scenario: "01-Illegal_Activitiy"
+          # image_type: not specified (tests all 3 types by default: SD, SD_TYPO, TYPO)
+
   # privacylens:
   #   source: local
   #   module: eval_benchmarks/privacylens
