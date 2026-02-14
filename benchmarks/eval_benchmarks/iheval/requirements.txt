@@ -1,0 +1,14 @@
+# IHEval Benchmark Requirements
+# Based on IHEval repository dependencies
+
+# Core evaluation dependencies
+rouge-score>=0.1.2
+langdetect>=1.0.9
+immutabledict>=4.2.0
+
+# Output formatting (used by IFEval)
+colorama>=0.4.6
+termcolor>=2.4.0
+
+# NLP utilities
+nltk>=3.8.0

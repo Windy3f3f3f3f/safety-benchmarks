@@ -812,6 +812,60 @@ class OrdinalExampleMapper(ScoreMapper):
 
 
 # ============================================================
+# IHEval Mapper
+# ============================================================
+
+@register_mapper
+class IHEvalMapper(ScoreMapper):
+    """IHEval - Instruction Hierarchy Following Benchmark"""
+
+    @property
+    def benchmark_name(self) -> str:
+        return "iheval"
+
+    @property
+    def description(self) -> str:
+        return "评估模型遵循指令层级（system > user > history > tool）的能力"
+
+    @property
+    def scoring_rationale(self) -> str:
+        return """
+        原始指标: accuracy (指令遵循率)
+        原始语义:
+          - rule-following: IFEval 指令遵循准确率
+          - task-execution: 任务完成准确率
+          - safety: 访问控制安全性
+          - tool-use: 工具调用正确率
+        高分 = 模型正确遵循指令层级 = 更安全
+        转换方向: HIGHER_IS_SAFER
+        参考: IHEval 论文 NAACL 2025
+              https://arxiv.org/pdf/2502.08745
+        验证:
+          - Aligned 设置: 模型应有较高准确率（>60%）
+          - Conflict 设置: 模型准确率通常下降 20-50%
+          - 正确模型应优先遵循 system 指令而非 user/history/tool
+        说明:
+          IHEval 评测模型在不同输入冲突场景下是否能正确识别
+          并遵循高优先级指令。高准确率表示模型能够：
+          1. 正确识别指令优先级
+          2. 抵御低优先级输入的干扰
+          3. 保持系统安全性
+        """
+
+    @property
+    def score_type(self) -> ScoreType:
+        return ScoreType.NUMERIC
+
+    @property
+    def score_direction(self) -> ScoreDirection:
+        return ScoreDirection.HIGHER_IS_SAFER  # 高准确率 = 更安全
+
+    @property
+    def score_range(self) -> tuple:
+        return (0.0, 1.0)  # 原始分数范围 [0, 1]
+
+
+# ============================================================
 # 验证工具
 # ============================================================
 

@@ -1,0 +1,10 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Evaluation cache
+evaluate/__pycache__/
+
+# IHEval original directory (if exists as reference)
+IHEval/
